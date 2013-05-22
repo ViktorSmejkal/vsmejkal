@@ -1,0 +1,40 @@
+<?php
+// $Id$
+$username = "vsmejkal";
+/**
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function hook_menu() {
+  $items = array();
+  
+  $items['/admin'] = array(
+    'path' => 'admin/$username',
+    'title' => t('My administration'),
+    'description' => t("Administration tools for $username module."),
+    'position' => 'left',
+    'callback' => 'system_admin_menu_block_page',
+    'access' => user_access('Admin access'),
+  );  
+  
+  $polozky[] = array(
+    'path' => 'admin/$username/polozka',
+    'title' => t('My administration item'),
+    'callback' => 'administrace',
+    'weight' => 0,
+    'access' => user_access('Admin access'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+    
+  return $items;
+  
+}
+
+
+function administrace() {
+  $obsah = t("Welcome into administration section!");
+
+  print theme('page', $obsah);
+}

@@ -1,0 +1,4 @@
+name = vsmejkal
+description = Module implements hook_menu
+core = 7.x
+package = Drupal 7 Development
