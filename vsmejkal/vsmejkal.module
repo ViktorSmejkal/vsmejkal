@@ -7,7 +7,7 @@ $username = "vsmejkal";
 /**
  * Implements hook_menu().
  */
-function hook_menu() {
+function vsmejkal_menu() {
   $items = array();
   
   $items['/admin/vsmejkal'] = array(
